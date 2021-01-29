@@ -1,17 +1,3 @@
-$(document).ready(function(){
-  $('.owl-carousel').owlCarousel({
-    items: 1,
-    nav: true,
-    autoplay: true,
-    autoplayHoverPause: false,
-    loop: true,
-    autoplayTimeout: 2500,
-    nav: false,
-    slideTransition: 'easeInOut',
-    animateOut: 'fadeOut'
-  });
-});
-
 // $(window).scroll(function() {
 //   var wScroll = $(this).scrollTop();
 //
@@ -23,7 +9,7 @@ $(document).ready(function(){
 // });
 
 (function() {
-  document.getElementById('studycenter').classList.add('active');
+  document.getElementById('study-center').classList.add('active');
 })();
 
 function changeTab(evt, tab) {
@@ -41,3 +27,39 @@ function changeTab(evt, tab) {
   document.getElementById(tab).classList.add("active");
   evt.currentTarget.classList.add("active");
 }
+
+function openPhotoSwipe() {
+  var pswpElement = document.querySelectorAll('.pswp')[0];
+
+  // build items array
+  var items = [
+      {
+          src: '/assets/images/group.jpg',
+          w: 650,
+          h: 350
+      },
+      {
+          src: '/assets/images/hygiene.jpg',
+          w: 650,
+          h: 350
+      },
+      {
+          src: '/assets/images/schooldress.jpg',
+          w: 650,
+          h: 350
+      }
+  ];
+
+  // define options (if needed)
+  var options = {
+      // optionName: 'option value'
+      // for example:
+      index: 0 // start at first slide
+  };
+
+  // Initializes and opens PhotoSwipe
+  var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+  gallery.init();
+}
+
+openPhotoSwipe();
