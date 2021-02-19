@@ -159,11 +159,11 @@ a.menu {
     flex-wrap: wrap;
     justify-content: center;
     .card {
-      text-decoration: none;
       display: inline-block;
       padding: 1.5rem;
       max-width: 200px;
       margin: 1rem;
+      border-radius: 1rem;
       &:nth-child(1) {
         background-color: var(--primary-color);
       }
