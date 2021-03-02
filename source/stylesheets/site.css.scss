@@ -23,10 +23,17 @@ img {
 body {
   background-color: var(--light-bg-color, #feeae1);
   color: var(--darker-color, #9c5434);
+  margin: 0;
   font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir",
     "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans",
     "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
     "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+  transform: translateX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+body.menu-opened {
+  transform: translateX(-150px);
 }
 
 h1 {
@@ -87,6 +94,74 @@ a.menu {
   font-weight: bolder;
   padding: 15px;
 }
+.body-overlay {
+  opacity: 0;
+  z-index: 0;
+  transition: all 400ms ease-in-out;
+}
+.body-overlay.active {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 120%;
+  width: 100%;
+  z-index: 100;
+  background-color: rgba(0,0,0,.6);
+  margin: 0;
+  opacity: 1;
+}
+.slide-nav {
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -250px;
+  background-color: #f3bdaf;
+  width: 250px;
+  max-width: 100%;
+  overflow: auto;
+  z-index: 200;
+  transition: transform 300ms ease-in-out;
+  font-weight: bold;
+  button {
+    background-color: transparent;
+    border: 3px solid var(--darker-color);
+    border-radius: 1rem;
+    outline: none;
+    color: var(--darker-color);
+    font-size: 1.25rem;
+    padding: 1rem;
+    width: 100%;
+    margin: 2rem 0 1rem;
+    font-weight: bold;
+    &:hover {
+     cursor: pointer;
+     border: 3px solid var(--dark-color);
+     color: var(--dark-color); 
+    }
+  }
+  ul {
+    padding: 0;
+    li {
+      list-style: none;
+      a {
+        display: block;
+        text-decoration: none;
+        font-size: 1.25rem;
+        color: var(--darker-color);
+        padding: 0.5rem 0;
+        cursor: pointer;
+        &:hover {
+          color: var(--dark-color);
+        }
+      }
+    }
+  }
+}
+.slide-nav.active {
+  transform: translateX(-100px);
+}
 
 .site-header {
   padding-top: 15px;
@@ -99,16 +174,103 @@ a.menu {
   background-repeat: no-repeat, no-repeat;
   background-size: contain, contain;
   background-position: center center, center center;
-  
-  .inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    @media(min-width: 600px) {
-      margin-left: 6rem;
-      max-width: 450px;
+  position: static;
+  .sps {
+    flex-wrap: wrap;
+    @media (max-width: 600px) {
+      flex-direction: column;
     }
+    .images-container {
+      display: flex;
+      position: relative;
+      width: 100%;
+      > div {
+        max-width: 400px;
+        border: 10px solid white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem 1rem;
+        &:nth-child(1) {
+          width: 400px;
+        }
+        &:nth-child(2) {
+          width: 400px;
+        }
+        &:nth-child(3) {
+          width: 400px;
+        }
+      }
+      @media (min-width: 1000px) {
+        > div {
+          position: absolute;
+          max-width: 400px;
+          border: 10px solid white;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &:nth-child(1) {
+            width: 200px;
+            right: 0;
+            bottom: 0;
+          }
+          &:nth-child(2) {
+            width: 180px;
+            right: 200px;
+            top: 10px;
+          }
+          &:nth-child(3) {
+            width: 220px;
+            bottom: 10px;
+            right: 220px;
+          }
+        }
+      }
+    }
+    .inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      @media(min-width: 600px) {
+        margin-left: 6rem;
+        max-width: 450px;
+      }
+    }
+  }
+}
+
+.page {
+  &.study-center-page .landing-hero {
+    min-height: 600px;
+    background-image: url(../images/round-arc.png), url(../images/children-group-bg.jpg);
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, cover;
+    background-position: center bottom, center bottom;
+  }
+  &.covid-releif-page .landing-hero {
+    min-height: 600px;
+    background-image: url(../images/round-arc.png), url(../images/covid.jpg);
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, cover;
+    background-position: center bottom, center bottom;
+  }
+  &.karuna-aid-page .landing-hero {
+    min-height: 600px;
+    background-image: url(../images/round-arc.png), url(../images/karuna-aid.jpg);
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, cover;
+    background-position: center bottom, center bottom;
+  }
+  
+  .title-section .inner {
+    text-align: center;
+    max-width: 80ch;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.9;
   }
 }
 
@@ -164,6 +326,9 @@ a.menu {
       max-width: 200px;
       margin: 1rem;
       border-radius: 1rem;
+      @media (max-width: 600px) {
+        max-width: 100%;
+      }
       &:nth-child(1) {
         background-color: var(--primary-color);
       }
