@@ -1,23 +1,34 @@
----
-title: Karuna Welfare Society
----
-
-<main>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title>Karuna Welfare Society</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <link href="/stylesheets/site.css" rel="stylesheet" />
+    <script src="/javascripts/site.js"></script>
+  </head>
+  <body>
+    <div class="site-nav">
+  <div class="container">
+    <div class="inner flex space-between">
+      <a href="/" class="logo">KWS</a>
+      <a href="#0" class="menu">MENU</a>
+    </div>
+  </div>
+</div>
+    <main>
   <section class="landing-hero">
     <div class="container">
       <div class="spacer"></div>
       <div class="spacer"></div>
-      <div class="sps flex">
-        <div class="inner">
-          <h1>Investing into India's tomorrow.</h1>
-          <div>
-            <a href="#0" class="button">Get in touch</a>
-          </div>
-        </div>
-        <div class="images-container">
-          <div><%= image_tag "bubble-1.png" %></div>
-          <div><%= image_tag "bubble-2.png" %></div>
-          <div><%= image_tag "bubble-3.png" %></div>
+      <div class="inner">
+        <h1>Investing into India's tomorrow.</h1>
+        <div>
+          <a href="#0" class="button">Get in touch</a>
         </div>
       </div>
       <div class="spacer"></div>
@@ -30,27 +41,19 @@ title: Karuna Welfare Society
       </div>
       <h2>See our various outreach programs to learn more about us:</h2>
       <div class="row">
-        <% link_to "karuna-kendra-study-center", class: "card" do %>
-          <span class="title">
+<a href="#0" class="card">          <span class="title">
             Karuna Kendra Study Center
           </span>
-        <% end %>
-        <% link_to "karuna-covid-releif", class: "card" do %>
-          <span class="title">
+</a><a href="#0" class="card">          <span class="title">
             Karuna Covid Releif
           </span>
-        <% end %>
-        <% link_to "/karuna-covid-aid", class: "card" do %>
-          <span class="title">
+</a><a href="#0" class="card">          <span class="title">
             Karuna Covid Aid
           </span>
-        <% end %>
-        <% link_to "#0", class: "card" do %>
-          <span class="title">
+</a><a href="#0" class="card">          <span class="title">
             Karuna Water Project
           </span>
-        <% end %>
-      </div>
+</a>      </div>
       <div class="spacer">
       </div>
     </div>
@@ -116,3 +119,18 @@ title: Karuna Welfare Society
     </div>
   </section>
 </main>
+    <footer class="site-footer">
+  <div class="container">
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="inner text-center">
+      <h2>Karuna Welfare Society</h2>
+      <p class="footer-contact-info flex space-between"><span>+91-129-4047223</span><span>info@karunasociety.co.in</span></p>
+      <address class="footer-address-info">Sector 21-C, Faridabad, Haryana 121001, INDIA</address>
+    </div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+  </div>
+</footer>
+  </body>
+</html>
