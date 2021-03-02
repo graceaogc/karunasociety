@@ -30,6 +30,7 @@ body {
     "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
   transform: translateX(0);
   transition: transform 250ms ease-in-out;
+  overflow-x: hidden;
 }
 
 body.menu-opened {
@@ -188,7 +189,7 @@ a.menu {
         flex-direction: column;
       }
       > div {
-        max-width: 400px;
+        max-width: 100%;
         border: 10px solid white;
         border-radius: 50%;
         display: flex;
