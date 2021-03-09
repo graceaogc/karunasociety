@@ -21,7 +21,7 @@ closeBtn.click('click', function(e) {
 });
 
 if ($(".page").length) {
-  const slider = tns({
+  tns({
     container: '.gallery',
     items: 3.3,
     slideBy: 1,
