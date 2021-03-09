@@ -1,23 +1,39 @@
-// This is where it all goes :)
+AOS.init();
 
-const body = document.body;
-const closeBtn = document.getElementById('close-menu');
-const openBtn = document.getElementById('open-menu');
-const slideNav = document.querySelector('.slide-nav');
-const bodyOverlay = document.querySelector('.body-overlay');
+const body = $(document.body);
+const closeBtn = $('#close-menu');
+const openBtn = $('#open-menu');
+const slideNav = $('.slide-nav');
+const bodyOverlay = $('.body-overlay');
 
-
-openBtn.addEventListener('click', function(e) {
+openBtn.click('click', function(e) {
   e.preventDefault();
-  bodyOverlay.classList.add('active');
-  slideNav.classList.add('active');
-  body.classList.add('menu-opened');
+  bodyOverlay.addClass('active');
+  slideNav.addClass('active');
+  body.addClass('menu-opened');
 });
 
-closeBtn.addEventListener('click', function(e) {
+closeBtn.click('click', function(e) {
   e.preventDefault();
-  bodyOverlay.classList.remove('active');
-  slideNav.classList.remove('active');
-  body.classList.remove('menu-opened');
+  bodyOverlay.removeClass('active');
+  slideNav.removeClass('active');
+  body.removeClass('menu-opened');
 });
 
+const slider = tns({
+  container: '.gallery',
+  items: 3.3,
+  slideBy: 1,
+  // gutter: 10,
+  autoplay: true,
+  autoWidth: true,
+  mouseDrag: true,
+  speed: 400,
+  nav: false,
+  nextButton: false,
+  prevButton: false,
+  controlsContainer: false,
+  controls: false,
+  autoplayButton: false,
+  autoplayButtonOutput: false
+});

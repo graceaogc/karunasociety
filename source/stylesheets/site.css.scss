@@ -249,24 +249,31 @@ a.menu {
 .page {
   &.study-center-page .landing-hero {
     min-height: 600px;
-    background-image: url(../images/round-arc.png), url(../images/children-group-bg.jpg);
+    background-image: url(../images/round-arc.png), url(../images/karuna-kendra-study-center-cover.jpg);
     background-repeat: no-repeat, no-repeat;
     background-size: cover, cover;
     background-position: center bottom, center bottom;
   }
   &.covid-releif-page .landing-hero {
     min-height: 600px;
-    background-image: url(../images/round-arc.png), url(../images/covid.jpg);
+    background-image: url(../images/round-arc.png), url(../images/karuna-covid-releif-cover.jpg);
     background-repeat: no-repeat, no-repeat;
     background-size: cover, cover;
     background-position: center bottom, center bottom;
   }
   &.karuna-aid-page .landing-hero {
     min-height: 600px;
-    background-image: url(../images/round-arc.png), url(../images/karuna-aid.jpg);
+    background-image: url(../images/round-arc.png), url(../images/karuna-aid-cover.jpg);
     background-repeat: no-repeat, no-repeat;
     background-size: cover, cover;
     background-position: center bottom, center bottom;
+  }
+  &.karuna-water-project-page .landing-hero {
+    min-height: 600px;
+    background-image: url(../images/round-arc.png), url(../images/karuna-water-project-cover.JPG);
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, cover;
+    background-position: center bottom, center center;
   }
   
   .title-section .inner {
@@ -386,5 +393,15 @@ a.menu {
   }
   .footer-address-info {
     font-style: normal;
+  }
+}
+
+.gallery {
+  > div {
+    > img {
+      height: 400px;
+      width: auto;
+      object-fit: contain;
+    }
   }
 }
