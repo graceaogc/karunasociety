@@ -254,9 +254,9 @@ a.menu {
     background-size: cover, cover;
     background-position: center bottom, center bottom;
   }
-  &.covid-releif-page .landing-hero {
+  &.covid-relief-page .landing-hero {
     min-height: 600px;
-    background-image: url(../images/round-arc.png), url(../images/karuna-covid-releif-cover.jpg);
+    background-image: url(../images/round-arc.png), url(../images/karuna-covid-relief-cover.jpg);
     background-repeat: no-repeat, no-repeat;
     background-size: cover, cover;
     background-position: center bottom, center bottom;
@@ -390,9 +390,13 @@ a.menu {
     span {
       display: inline-block;
     }
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+    }
   }
   .footer-address-info {
     font-style: normal;
+    margin-bottom: 1rem;
   }
 }
 

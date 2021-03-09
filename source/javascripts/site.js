@@ -20,20 +20,22 @@ closeBtn.click('click', function(e) {
   body.removeClass('menu-opened');
 });
 
-const slider = tns({
-  container: '.gallery',
-  items: 3.3,
-  slideBy: 1,
-  // gutter: 10,
-  autoplay: true,
-  autoWidth: true,
-  mouseDrag: true,
-  speed: 400,
-  nav: false,
-  nextButton: false,
-  prevButton: false,
-  controlsContainer: false,
-  controls: false,
-  autoplayButton: false,
-  autoplayButtonOutput: false
-});
+if ($(".page").length) {
+  const slider = tns({
+    container: '.gallery',
+    items: 3.3,
+    slideBy: 1,
+    // gutter: 10,
+    autoplay: true,
+    autoWidth: true,
+    mouseDrag: true,
+    speed: 400,
+    nav: false,
+    nextButton: false,
+    prevButton: false,
+    controlsContainer: false,
+    controls: false,
+    autoplayButton: false,
+    autoplayButtonOutput: false
+  });
+}
